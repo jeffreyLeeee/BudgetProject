@@ -16,7 +16,7 @@ public class BudgetService
         var startFormat = start.ToString("yyyyMM");
         var endFormat = end.ToString("yyyyMM");
 
-        if (start.Month == end.Month)
+        if (start.Year == end.Year && start.Month == end.Month)
         {
             var totalDays = (end - start).TotalDays + 1;
 
@@ -34,7 +34,7 @@ public class BudgetService
 
         for (int i = 1;; i++)
         {
-            if (start.AddMonths(i).Month == end.Month)
+            if (start.AddMonths(i).Year == end.Year && start.AddMonths(i).Month == end.Month)
             {
                 break;
             }

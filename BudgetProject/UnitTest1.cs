@@ -64,8 +64,17 @@ public class Tests
     public void BudgetOverMultiMonths()
     {
         GiveMultiMonthBudget();
-        var query = _budgetService.Query(new DateTime(2022, 10, 31), new DateTime(2022, 12,7));
+        var query = _budgetService.Query(new DateTime(2022, 10, 31), new DateTime(2022, 12, 7));
         var expected = 100 + 300 + 7;
+        Assert.AreEqual(expected, query);
+    }
+
+    [Test]
+    public void BudgetOverYears()
+    {
+        GiveMultiMonthBudget();
+        var query = _budgetService.Query(new DateTime(2022, 10, 31), new DateTime(2023, 10, 20));
+        var expected = 100 + 300 + 31 + 20000;
         Assert.AreEqual(expected, query);
     }
 
@@ -84,6 +93,7 @@ public class Tests
             new("202210", 3100),
             new("202211", 300),
             new("202212", 31),
+            new("202310",31000)
         });
     }
 }
