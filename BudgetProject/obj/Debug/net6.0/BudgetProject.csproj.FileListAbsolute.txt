@@ -97,3 +97,8 @@ C:\Practice\Budget\BudgetProject\obj\Debug\net6.0\refint\BudgetProject.dll
 C:\Practice\Budget\BudgetProject\obj\Debug\net6.0\BudgetProject.pdb
 C:\Practice\Budget\BudgetProject\obj\Debug\net6.0\BudgetProject.genruntimeconfig.cache
 C:\Practice\Budget\BudgetProject\obj\Debug\net6.0\ref\BudgetProject.dll
+C:\Practice\Budget\BudgetProject\bin\Debug\net6.0\Castle.Core.dll
+C:\Practice\Budget\BudgetProject\bin\Debug\net6.0\NSubstitute.dll
+C:\Practice\Budget\BudgetProject\bin\Debug\net6.0\System.Diagnostics.EventLog.dll
+C:\Practice\Budget\BudgetProject\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+C:\Practice\Budget\BudgetProject\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
