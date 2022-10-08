@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 public class BudgetService
@@ -28,16 +29,33 @@ public class BudgetService
 
             return budget.DailyAmount() * totalDays;
         }
-        
-        
-        
+
+        var middleMonths = new List<Budget>();
+
+        for (int i = 1;; i++)
+        {
+            if (start.AddMonths(i).Month == end.Month)
+            {
+                break;
+            }
+
+            middleMonths.Add(BudgetByYearMonth(start.AddMonths(i).ToString("yyyyMM")));
+        }
+
+        var totalAmount = 0;
+
+        foreach (var middleMonth in middleMonths)
+        {
+            totalAmount += middleMonth.Amount;
+        }
+
         var startBudget = BudgetByYearMonth(startFormat);
         var endBudget = BudgetByYearMonth(endFormat);
 
         var startDays = startBudget.Days() - start.Day + 1;
         var endDays = end.Day;
 
-        return startBudget.DailyAmount() * startDays + endBudget.DailyAmount() * endDays;
+        return startBudget.DailyAmount() * startDays + endBudget.DailyAmount() * endDays + totalAmount;
     }
 
     private static Budget? BudgetByYearMonth(string startFormat)

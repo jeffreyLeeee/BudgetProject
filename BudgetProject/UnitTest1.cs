@@ -60,6 +60,15 @@ public class Tests
         Assert.AreEqual(expected, query);
     }
 
+    [Test]
+    public void BudgetOverMultiMonths()
+    {
+        GiveMultiMonthBudget();
+        var query = _budgetService.Query(new DateTime(2022, 10, 31), new DateTime(2022, 12,7));
+        var expected = 100 + 300 + 7;
+        Assert.AreEqual(expected, query);
+    }
+
     private void GiveSingleMonthBudget()
     {
         _budgetRepo.GetAll().Returns(new List<Budget>
